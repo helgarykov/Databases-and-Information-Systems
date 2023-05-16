@@ -21,18 +21,19 @@ CREATE TABLE Category (
     TransportTimeFee FLOAT
 );
 
+
 CREATE TABLE Translator (
     Id SERIAL PRIMARY KEY,
     FirstName VARCHAR(30) NOT NULL,
     LastName VARCHAR(30) NOT NULL,
-    Age INT DEFAULT 18 CHECK (Age >= 18 AND Age <= 70),
-    CityAddress VARCHAR(30),
+    Age INT DEFAULT 18 CHECK (Age >= 18 AND Age <= 70),CityAddress VARCHAR(30),
 	Street VARCHAR(50),
 	HouseNr VARCHAR(20),
     Email VARCHAR(50) UNIQUE,
     Tlf VARCHAR(20) UNIQUE,
     Education TEXT NOT NULL
 );
+
 
 CREATE TABLE Language (
     Id SERIAL PRIMARY KEY,
@@ -82,9 +83,9 @@ CREATE TABLE Translator_Employment (
 
 
 
-/* Statement for at hive experience from TRanslatorEmployment table:
+/* Statement for at hive experience ud af TRanslatorEmployment table:
 1) aggregate function: AVG SUm MIN MAX group by Translator_ID and group by Translator_ID
-2) DATEDIFF (dismissalD - employmentDate, then find the sum of differences (fordi ingen overlappende perioder, men i real life er det mere kompliceret fordi man kan arbjde flere firma på samme tid)
+2) DATEDIFF (dismissalD - employmentDate, then find the sum of differences (fordi ingen overlappende perioder, men i real life er det mere kompliceret fordi man kan arbejde flere steder på samme tid)
 
 Constraint: translators kan kun arbejde i et firma ad gangen, men in real life kan hun være ansat flere steder samtidigt
 
