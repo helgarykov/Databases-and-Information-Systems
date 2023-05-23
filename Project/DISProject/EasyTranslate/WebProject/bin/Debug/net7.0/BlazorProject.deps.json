@@ -9,6 +9,7 @@
       "BlazorProject/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.123",
+          "Data": "1.0.0",
           "Npgsql": "8.0.0-preview.4"
         },
         "runtime": {
@@ -33,6 +34,15 @@
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.0.0"
           }
+        }
+      },
+      "Data/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "Npgsql": "8.0.0-preview.4"
+        },
+        "runtime": {
+          "Data.dll": {}
         }
       }
     }
@@ -63,6 +73,11 @@
       "sha512": "sha512-wvbiipddbRgaiYOij4fQYqnfDlxKz1XlpCNY7mWErF+CPmg+ujfs9u1ovx40TsV0Q7GKlgdyr6dugV15HvZ2Pw==",
       "path": "npgsql/8.0.0-preview.4",
       "hashPath": "npgsql.8.0.0-preview.4.nupkg.sha512"
+    },
+    "Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

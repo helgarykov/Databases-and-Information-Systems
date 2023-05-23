@@ -156,11 +156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Data/Data.csproj",
+      "projectUniqueName": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj",
       "projectName": "Data",
-      "projectPath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Data/Data.csproj",
+      "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj",
       "packagesPath": "/Users/helgarykov/.nuget/packages/",
-      "outputPath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Data/obj/",
+      "outputPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/helgarykov/.nuget/NuGet/NuGet.Config"

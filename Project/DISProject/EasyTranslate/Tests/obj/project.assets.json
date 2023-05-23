@@ -5680,11 +5680,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Tests/Tests.csproj",
+      "projectUniqueName": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Tests/Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Tests/Tests.csproj",
+      "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Tests/Tests.csproj",
       "packagesPath": "/Users/helgarykov/.nuget/packages/",
-      "outputPath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Tests/obj/",
+      "outputPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/helgarykov/.nuget/NuGet/NuGet.Config"
@@ -5699,8 +5699,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Data/Data.csproj": {
-              "projectPath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Data/Data.csproj"
+            "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj": {
+              "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj"
             }
           }
         }

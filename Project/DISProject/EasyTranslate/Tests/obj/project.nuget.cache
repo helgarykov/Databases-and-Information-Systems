@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e+9hjCLLJublSEPcWOfWnGw00EsVPO8x86fgI0Z8OCvOMlwr92mznTfnNfwcVA3sRAIrTdsRkU4LllyH4v/dMg==",
+  "dgSpecHash": "eWbVLwvkn6RmTcTvAk91axf3bb2bjCl2HtFLflKj1yaIN8ZPHgBwKvELDbrNoEj+oa0TwZlTeCMqdw/2UpIWrQ==",
   "success": true,
-  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/Tests/Tests.csproj",
+  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Tests/Tests.csproj",
   "expectedPackageFiles": [
     "/Users/helgarykov/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
     "/Users/helgarykov/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",

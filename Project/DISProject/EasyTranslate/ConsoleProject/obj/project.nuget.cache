@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eqdnGiRLsa9RL9Ov++RiczGl/o98vYmu6iB1aFWJfVqw9knkDiH4DYrPcooBsS8aouY8IG3go1EG6J0Td5dkrQ==",
+  "dgSpecHash": "ELdfEOotAkQpNivBWpKthsARA0QUNBU5pqc+KV3aISAkvfy6k18mv/dcIlYPTZd6jf7rE0t1R8IpacZ0ZlWG3w==",
   "success": true,
-  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/EasyTranslate/ConsoleProject/ConsoleProject.csproj",
+  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/ConsoleProject/ConsoleProject.csproj",
   "expectedPackageFiles": [
     "/Users/helgarykov/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/Users/helgarykov/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",

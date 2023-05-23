@@ -53,7 +53,7 @@ public class DatabaseQueryService
 }
 
 
-public class Translator
+public class Translator: DataQueryServiceInterface
 {
     public int Id { get; set; }
     public string Title { get; set; } = null!;
