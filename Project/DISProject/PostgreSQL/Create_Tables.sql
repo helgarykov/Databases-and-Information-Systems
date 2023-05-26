@@ -58,8 +58,10 @@ CREATE TABLE Task (
 	CityAddress VARCHAR(30) NULL,
 	Street VARCHAR(50) NULL,
 	HouseNr VARCHAR(20) NULL,
-    TranslatorCompetenceID INT REFERENCES TranslatorCompetence(Id),	-- references concrete translator and her language used 
+    TranslatorCompetenceID INT REFERENCES Translator_Competence(Id),	-- references concrete translator and her language used 
     ClientId INT REFERENCES Client(Id) ON DELETE CASCADE			-- 'has a'-relationship between task and client
+	TranslatorId INT REFERENCES Translator(Id) ON DELETE NO ACTION,
+	LanguageID INT REFERENCES Language(Id) ON DELETE NO ACTION
 );
 
 CREATE TABLE Task_Review (
@@ -68,7 +70,9 @@ CREATE TABLE Task_Review (
     Body TEXT,
     Stars INT DEFAULT 0 CHECK (Stars >= 1 AND Stars <= 5),
     TaskId INT REFERENCES Task(Id) ON DELETE CASCADE,
-	ClientId INT REFERENCES Client(Id) ON DELETE NO ACTION
+	ClientId INT REFERENCES Client(Id) ON DELETE NO ACTION,
+	TranslatorId INT REFERENCES Translator(Id) ON DELETE NO ACTION,
+	LanguageID INT REFERENCES Language(Id) ON DELETE NO ACTION
 );
 
 
