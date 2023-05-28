@@ -3,7 +3,7 @@ namespace Data.Models;
 public class TaskReview
 {
     private DateTime _dateOfReview;
-    private int _stars = 0; // default value
+    private int _stars; // default value
 
     public int Id { get; set; }
 
@@ -20,7 +20,7 @@ public class TaskReview
         get => _stars;
         set
         {
-            if (value < 1 || value > 5)
+            if (value is < 1 or > 5)
             {
                 throw new ArgumentOutOfRangeException(nameof(Stars), "Stars must be between 1 and 5.");
             }

@@ -4,5 +4,5 @@ namespace Data.IServices;
 
 public interface ITaskReviewService
 {
-    public IEnumerable<TaskReview> AddReviewViaDapper();
+    public int AddReviewViaDapper();
 }

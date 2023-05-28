@@ -4,9 +4,9 @@ using Data.IServices;
 using Data.Models;
 using Npgsql;
 
-
 namespace Data.Services;
 
+/* Class for creating a task review. */
 public class TaskReviewService : ITaskReviewService
 {  
     public IDbConnection Connection { get; }
@@ -15,16 +15,30 @@ public class TaskReviewService : ITaskReviewService
     {
         Connection = connection;
     }
-    public IEnumerable<TaskReview> AddReviewViaDapper()
+    
+    /* Add a task review and return the Id of the new review. */
+    public int AddReviewViaDapper()
     {
-        
-       
-        var sql = "\n INSERT INTO TaskReview (DateOfReview, Body, Stars, TaskId, ClientId) \n " +
-                  "VALUES (@DateOfReview, @Body, @Stars, @TaskId, @ClientId); \n " +
-                  "SELECT CAST(SCOPE_IDENTITY() as int);";
+        var parameters = new 
+        {
+            DateOfReview = DateTime.Parse("2023-05-31"),
+            Body = "Fremragnede tolkning. Tolken har mødt op til tiden og" +
+                   "har udført et godt stykke arbejde. Topprofessionelt.",
+            Stars = 5,
+            TaskId = 24,
+            ClientId = 27,
+            TranslatorId = 8,
+            LanguageId = 4
+        };
+        var sql = "INSERT INTO Task_Review (DateOfReview, Body," +
+                  " Stars, TaskId, ClientId, TranslatorId, LanguageId) " +
+                  "VALUES (@DateOfReview, @Body, @Stars, @TaskId, @ClientId," +
+                  " @TranslatorId, @LanguageId) " +
+                  "RETURNING Id;";
 
-        var newTaskReview = Connection.Query<TaskReview>(sql);
+        int newId = Connection.QuerySingle<int>(sql, parameters);
 
-        return newTaskReview;
+        return newId;
     }
 }
+
