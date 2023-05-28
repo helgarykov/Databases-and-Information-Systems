@@ -2,7 +2,6 @@ using System.Data;
 using Dapper;
 using Data.IServices;
 using Data.Models;
-using Npgsql;
 
 namespace Data.Services;
 

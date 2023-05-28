@@ -1,11 +1,7 @@
 using System.Data;
-using BlazorProject.Models;
 using Dapper;
 using Data.IServices;
 using Data.Models;
-using Npgsql;
-using System.Threading.Tasks;
-using Task = System.Threading.Tasks.Task;
 
 namespace Data.Services;
 

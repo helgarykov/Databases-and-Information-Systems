@@ -1,13 +1,13 @@
 using System.Data;
 using Dapper;
 using Data.IServices;
-using Data.Models;
 using Data.ViewModels;
-using Npgsql;
-using Task = System.Threading.Tasks.Task;
 
 namespace Data.Services;
 
+/* Class for implementing queries on the average rating of translators.
+ Note: The method below implements the query on English, German and Russian
+ translators. */
 public class TranslatorCompetenceService : ITranslatorCompetenceService 
 {
     public IDbConnection Connection { get; }
@@ -16,7 +16,6 @@ public class TranslatorCompetenceService : ITranslatorCompetenceService
     {
         Connection = connection;
     }
-    
     public IEnumerable<RatedTranslator> GetTranslatorsWithRatings()
     {
         string[] languages = new string[] { "English", "Russian", "German" };

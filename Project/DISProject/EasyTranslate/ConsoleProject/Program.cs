@@ -30,12 +30,12 @@ var results1 = clientServiceTranslators.GetTranslatorsViaDapper();
 Console.WriteLine("\n The list of all English, German and Russian translators: \n");
 foreach (var translator in results1)
 {
-    Console.WriteLine($"{translator.ContactName}, Email: {translator.Email}, Tlf: {translator.Tlf}, " +
+    Console.WriteLine($"Id: {translator.TranslatorId}, {translator.ContactName}, Email: {translator.Email}, Tlf: {translator.Tlf}, " +
                       $"Language: {translator.Language}");
 }
 
-/* Service 4. View all English, German and Russian translators in
- the ascending order according to their average rating. */
+/* Service 4. View all English, German and Russian translators according to their average rating
+  in the ascending order. */
 var clientServiceRatedTranslators = new TranslatorCompetenceService(connection);
 var result2 = clientServiceRatedTranslators.GetTranslatorsWithRatings();
 
@@ -47,11 +47,20 @@ foreach (var translator in result2)
                       $"Average Rating: {translator.AverageRating}");
 }
 
+/* Service 5. Add a task. */
+var myTaskServiceInstance = new TaskService(connection);
+var newTaskId = myTaskServiceInstance.AddTaskViaDapper();
+Console.WriteLine("\n Add a task and return its Id.\n");
+Console.WriteLine("New Task ID: " + newTaskId);
+myTaskServiceInstance.PrintTask(newTaskId);
+
 /* Service 6. Add a task review. */
 var myTaskReviewServiceInstance = new TaskReviewService(connection);
-int newReviewId = myTaskReviewServiceInstance.AddReviewViaDapper();
+var newReviewId = myTaskReviewServiceInstance.AddReviewViaDapper();
 Console.WriteLine("\n Add a task review and return the Id of the new review.\n");
 Console.WriteLine("New Review ID: " + newReviewId);
+
+/* Service 7. View all previous tasks (client). */ 
 
 
 

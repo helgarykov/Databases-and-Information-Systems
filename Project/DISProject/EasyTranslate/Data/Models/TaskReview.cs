@@ -30,4 +30,6 @@ public class TaskReview
 
     public int TaskId { get; set; }
     public int ClientId { get; set; }
+    public int TranslatorId { get; set; }
+    public int LanguageId { get; set; }
 }

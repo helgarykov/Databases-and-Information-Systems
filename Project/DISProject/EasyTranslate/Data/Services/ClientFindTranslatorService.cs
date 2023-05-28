@@ -1,9 +1,7 @@
 using System.Data;
 using BlazorProject.Models;
 using Dapper;
-using Data.Models;
 using Data.ViewModels;
-using Npgsql;
 
 namespace Data.Services;
 
@@ -21,7 +19,8 @@ public class ClientFindTranslatorService : IClientFindTranslatorService
     {
         string[] languages = new string[] { "English", "Russian", "German" };
 
-        var sql = "SELECT translator.FirstName || ' ' || translator.LastName AS ContactName, " +
+        var sql = "SELECT translator.Id AS TranslatorId, " +
+                  "translator.FirstName || ' ' || translator.LastName AS ContactName, " +
                   "translator.Email AS Email, translator.Tlf AS Tlf, language.nameOfLang AS Language " +
                   "FROM Translator " +
                   "INNER JOIN Translator_Competence tc ON translator.Id = tc.TranslatorId " +

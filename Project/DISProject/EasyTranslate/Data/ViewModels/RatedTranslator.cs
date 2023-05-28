@@ -1,5 +1,3 @@
-using Data.Models;
-
 namespace Data.ViewModels;
 
 public class RatedTranslator

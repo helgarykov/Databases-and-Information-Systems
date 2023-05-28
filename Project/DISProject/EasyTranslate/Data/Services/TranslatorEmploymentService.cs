@@ -1,10 +1,7 @@
 using System.Data;
-using System.Runtime.InteropServices.JavaScript;
 using Dapper;
 using Data.IServices;
 using Data.Models;
-using Npgsql;
-using Task = System.Threading.Tasks.Task;
 
 namespace Data.Services;
 
@@ -16,6 +13,8 @@ public class TranslatorEmploymentService : ITranslatorEmploymentService
     {
         Connection = connection;
     }
+    
+    //TODO: implement GetTranslatorComp below
     
     public IEnumerable<TranslatorEmployment> GetTranslatorCompetencesViaDapper()
     {

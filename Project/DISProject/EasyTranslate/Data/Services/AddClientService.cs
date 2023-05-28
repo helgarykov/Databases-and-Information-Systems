@@ -2,7 +2,6 @@ using System.Data;
 using Dapper;
 using Data.IServices;
 using Data.Models;
-using Npgsql;
 
 namespace Data.Services;
 
@@ -14,6 +13,8 @@ public class AddClientService : IAddClientService
     {
         Connection = connection;
     }
+    
+    //TODO: implement AddNewClient
     public IEnumerable<Client> AddClientViaDapper()
     {
 

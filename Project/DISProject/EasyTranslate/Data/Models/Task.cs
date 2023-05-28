@@ -40,4 +40,6 @@ public class Task
     public string HouseNr { get; set; }
     public int TranslatorCompetenceID { get; set; } 
     public int ClientId { get; set; } 
+    public int TranslatorId { get; set; }
+    public int LanguageId { get; set; }
 }
