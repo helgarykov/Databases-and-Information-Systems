@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "QbsasTI5bow6GBKhRMdEMi6jpP0Di7twtD9PqkRKTsMyyX2e8E1TBCB50AVcytlgzhghaXnxoJgtOzA0c8+CJQ==",
+  "success": true,
+  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/BlazorProject.csproj",
+  "expectedPackageFiles": [
+    "/Users/helgarykov/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
+    "/Users/helgarykov/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "/Users/helgarykov/.nuget/packages/npgsql/8.0.0-preview.4/npgsql.8.0.0-preview.4.nupkg.sha512"
+  ],
+  "logs": []
+}

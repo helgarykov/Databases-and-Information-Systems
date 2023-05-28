@@ -1,0 +1,27 @@
+1) Create a separate interface per service:
+
+public interface ITaskService
+{
+    IEnumerable<TranslationTask> GetAllTasks();
+    IEnumerable<TranslationTask> GetAllClientTasks(int clientId);
+    void CreateNewTask(TranslationTask task);
+}
+
+1a) each ServiceClass contains its methods (get<>)
+
+2) Create a class per interface
+
+3) Can be written in one file and then (<Refactor>/<Files>/<folders>) automatically.
+
+4) LINQ (+) : (NuGet installed: Npgsql 8.0.0, Dapper 2.0.123)
+
+5) LINQ to SQL "-" (fx Entity Framework)
+
+6) NOTE to running BlazorProject: version 7.0.0 (/BlazorProject<Properties: Target framework:net7.0)
+
+7) can be asked to run in a console: dotnet dev-certs https --trust
+
+8) to get an access to the backend of the project, go into NuGet in the bottom line and see what frameworks 
+   have been installed. In casu, no frameworks have been installed. Have thus installed, two legal ones.
+  
+9) Build clean, then build, if cannot build.

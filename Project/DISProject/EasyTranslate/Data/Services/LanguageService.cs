@@ -17,18 +17,21 @@ public class LanguageService : ILanguageService
     {
         Connection = connection;
     }
+    
+    /* Get English */
     public IEnumerable<Language> GetLanguageViaDapper()
     {
-        var langEnglish = "English";
+        var lang = "English";
             
             var language = Connection.Query<Language>($"""
                 SELECT language.id as Id, language.nameOfLang as nameoflang
                 FROM Language
-                WHERE NameOfLang = @langEnglish
-            """, new { lang = langEnglish});
+                WHERE NameOfLang = @lang
+            """, new { lang = lang});
            return language;
     }
 
+    /* Get all available languages. */
     public IEnumerable<Language> GetAllLanguagesViaDapper()
     {
         var languages = Connection.Query<Language>(sql: $"""
