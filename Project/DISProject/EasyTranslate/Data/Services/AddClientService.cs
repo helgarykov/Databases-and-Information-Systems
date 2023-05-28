@@ -7,14 +7,16 @@ using Npgsql;
 namespace Data.Services;
 
 public class AddClientService : IAddClientService
-{  
+{
+    public IDbConnection Connection { get; }
+    
+    public AddClientService(IDbConnection connection)
+    {
+        Connection = connection;
+    }
     public IEnumerable<Client> AddClientViaDapper()
     {
-        IDbConnection connection = new NpgsqlConnection("User ID=root;Password=1234;" +
-                                                        "Host=localhost;Port=5433;" +
-                                                        "Database=Easy_Translate;");
-      
-        
+
         var sql = "\n INSERT INTO Client (ContactName, Login, Password, Tlf, " +
                   "CityAddress, Street, HouseNr, FeeMultiplier) \n " +
                   "VALUES (@ContactName, @Login, @Password, @Tlf, " +
@@ -22,7 +24,7 @@ public class AddClientService : IAddClientService
                   "SELECT CAST(SCOPE_IDENTITY() as int);";
 
 
-        var newClient = connection.Query<Client>(sql);
+        var newClient = Connection.Query<Client>(sql);
         return newClient;
     }
 }

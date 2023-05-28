@@ -1,4 +1,5 @@
 using System.Data;
+using System.Runtime.InteropServices.JavaScript;
 using Dapper;
 using Data.IServices;
 using Data.Models;
@@ -9,15 +10,23 @@ namespace Data.Services;
 
 public class TranslatorEmploymentService : ITranslatorEmploymentService
 {
+    public IDbConnection Connection { get; }
+
+    public TranslatorEmploymentService(IDbConnection connection)
+    {
+        Connection = connection;
+    }
+    
     public IEnumerable<TranslatorEmployment> GetTranslatorCompetencesViaDapper()
     {
-        using (IDbConnection connection = new NpgsqlConnection("User ID=root;Password=1234;" +
-                                                               "Host=localhost;Port=5433;" +
-                                                               "Database=Easy_Translate;"))
-            
+
         {   // View from most to least experineced all Spanish and German translators.
-            string sql = @"SELECT 
-            T.FirstName, 
+            
+            
+            DateTime today = DateTime.Today;
+                
+            string sql = $@"SELECT 
+            T.{"ARG"}FirstName, 
             T.LastName, 
             SUM(EXTRACT(YEAR FROM TE.DismissalDate) - EXTRACT(YEAR FROM TE.EmploymentDate)) AS ExperienceYears
             FROM 
@@ -36,7 +45,7 @@ public class TranslatorEmploymentService : ITranslatorEmploymentService
             ExperienceYears DESC;
             ";
 
-            var translatorExperienceSpanishGerman = connection.Query<TranslatorEmployment>(sql);
+            var translatorExperienceSpanishGerman = Connection.Query<TranslatorEmployment>(sql);
 
             return translatorExperienceSpanishGerman;
         }

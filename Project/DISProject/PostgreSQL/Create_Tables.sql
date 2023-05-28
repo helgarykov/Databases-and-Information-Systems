@@ -59,7 +59,7 @@ CREATE TABLE Task (
 	Street VARCHAR(50) NULL,
 	HouseNr VARCHAR(20) NULL,
     TranslatorCompetenceID INT REFERENCES Translator_Competence(Id),	-- references concrete translator and her language used 
-    ClientId INT REFERENCES Client(Id) ON DELETE CASCADE			-- 'has a'-relationship between task and client
+    ClientId INT REFERENCES Client(Id) ON DELETE CASCADE,		-- 'has a'-relationship between task and client
 	TranslatorId INT REFERENCES Translator(Id) ON DELETE NO ACTION,
 	LanguageID INT REFERENCES Language(Id) ON DELETE NO ACTION
 );

@@ -11,17 +11,31 @@ namespace Data.Services;
 
 public class LanguageService : ILanguageService
 {
+    public IDbConnection Connection { get; }
+
+    public LanguageService(IDbConnection connection)
+    {
+        Connection = connection;
+    }
     public IEnumerable<Language> GetLanguageViaDapper()
     {
-        using (IDbConnection connection = new NpgsqlConnection("User ID=root;Password=1234;" +
-                                                               "Host=localhost;Port=5433;" +
-                                                               "Database=Easy_Translate;"))
-        {
-           /* var language = connection.Query<Language>("SELECT l.* FROM Language l" +
-                                                      "INNER JOIN NameOfLang"); */
-           return null;
-        }
+        var langEnglish = "English";
+            
+            var language = Connection.Query<Language>($"""
+                SELECT language.id as Id, language.nameOfLang as nameoflang
+                FROM Language
+                WHERE NameOfLang = @langEnglish
+            """, new { lang = langEnglish});
+           return language;
+    }
 
-    } 
+    public IEnumerable<Language> GetAllLanguagesViaDapper()
+    {
+        var languages = Connection.Query<Language>(sql: $"""
+                SELECT language.id as Id, language.nameOfLang as nameoflang
+                FROM language 
+            """);
+            return languages;
+    }
 }
 

@@ -1,13 +1,14 @@
 using System.Data;
 using Dapper;
 using Data.Models;
+using Data.ViewModels;
 using Npgsql;
 
 namespace BlazorProject.Models;
 
-public interface IClientFindTranslatorService 
+public interface IClientFindTranslatorService
 {
-    public IEnumerable<Translator> GetTranslatorsViaDapper();
+    public IEnumerable<TranslatorWithLanguage> GetTranslatorsViaDapper();
 
 }
 
