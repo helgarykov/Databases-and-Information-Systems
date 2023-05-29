@@ -2,6 +2,7 @@ using System.Data;
 using Dapper;
 using Data.IServices;
 using Data.Models;
+using Data.ViewModels;
 
 namespace Data.Services;
 
@@ -14,39 +15,42 @@ public class TranslatorEmploymentService : ITranslatorEmploymentService
         Connection = connection;
     }
     
-    //TODO: implement GetTranslatorComp below
     
-    public IEnumerable<TranslatorEmployment> GetTranslatorCompetencesViaDapper()
+    /* Calculate the total years of experience for each (in casu German) translator, both from jobs
+     that have ended (TE.DismissalDate IS NOT NULL) and those that are ongoing 
+     (TE.DismissalDate IS NULL), and then group and order the results by TotalExperienceYears. */
+    public IEnumerable<TranslatorExperience> GetTranslatorCompetenceViaDapper()
     {
+        var lang = "German";
+        DateTime today = DateTime.Today;
+        int currentYear = today.Year;
 
-        {   // View from most to least experineced all Spanish and German translators.
-            
-            
-            DateTime today = DateTime.Today;
-                
-            string sql = $@"SELECT 
-            T.{"ARG"}FirstName, 
-            T.LastName, 
-            SUM(EXTRACT(YEAR FROM TE.DismissalDate) - EXTRACT(YEAR FROM TE.EmploymentDate)) AS ExperienceYears
-            FROM 
-                Translator AS T
-            JOIN 
-                Translator_Employment AS TE ON T.Id = TE.TranslatorId
-            JOIN 
-                Translator_Competence AS TC ON T.Id = TC.TranslatorId
-            JOIN 
-                Language AS L ON TC.LanguageId = L.Id
-            WHERE 
-            L.NameOfLang IN ('Spanish', 'German') AND TE.DismissalDate IS NOT NULL
-            GROUP BY 
-            T.Id
-                ORDER BY 
-            ExperienceYears DESC;
-            ";
+        string sql = $@"SELECT 
+         T.FirstName || ' ' || T.LastName as ContactName, 
+        SUM(
+            CASE 
+                WHEN TE.DismissalDate IS NOT NULL THEN EXTRACT(YEAR FROM TE.DismissalDate) - EXTRACT(YEAR FROM TE.EmploymentDate)
+                ELSE {currentYear} - EXTRACT(YEAR FROM TE.EmploymentDate)
+            END
+        ) AS TotalExperienceYears
+        FROM 
+            Translator AS T
+        JOIN 
+            Translator_Employment AS TE ON T.Id = TE.TranslatorId
+        JOIN 
+            Translator_Competence AS TC ON T.Id = TC.TranslatorId
+        JOIN 
+            Language AS L ON TC.LanguageId = L.Id
+        WHERE 
+            L.NameOfLang IN (@lang)
+        GROUP BY 
+            T.FirstName, 
+            T.LastName
+        ORDER BY 
+            TotalExperienceYears DESC;";
 
-            var translatorExperienceSpanishGerman = Connection.Query<TranslatorEmployment>(sql);
+        var translatorExperienceGerman = Connection.Query<TranslatorExperience>(sql, new { lang = lang });
 
-            return translatorExperienceSpanishGerman;
-        }
+        return translatorExperienceGerman;
     }
 }

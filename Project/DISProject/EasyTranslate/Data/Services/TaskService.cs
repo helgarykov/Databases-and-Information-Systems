@@ -29,7 +29,8 @@ namespace Data.Services
                 Street = "Grovevej",
                 HouseNr = 505,
                 TranslatorId = 1,
-                LanguageId = 1
+                LanguageId = 1,
+                TranslatorCompetenceId = -1  
             };
 
             var sql = "INSERT INTO Task ( ClientId, TaskType, DateOfTask, StartTime, EndTime, " +
@@ -39,10 +40,30 @@ namespace Data.Services
                       "@LanguageId) " +
                       "RETURNING Id;";
 
-            int newTask = Connection.QuerySingle<int>(sql, parameters);
+            var sqlTransCompId = "SELECT tc.Id AS Id " +
+                       "FROM Translator_Competence AS tc " +
+                       "WHERE tc.translatorId = @TranslatorId  " +
+                       "AND tc.languageId = @LanguageId ;";
 
+            var sqlUpdate = "UPDATE Task " +
+                            "SET TranslatorCompetenceId = @TranslatorCompetenceId " +
+                            "WHERE Id = @newTask " +
+                            "RETURNING Id;";
+
+            int newTask = Connection.QuerySingle<int>(sql, parameters);
+            int transCompId = Connection.QuerySingle<int>(sqlTransCompId, parameters);
+            
+            var parameter2 = new
+            {
+                TranslatorCompetenceId = transCompId,
+                newTask = newTask
+            };
+
+            int updateTaskTable = Connection.QuerySingle<int>(sqlUpdate, parameter2);
+            
             return newTask;
         }
+        
 
         public void PrintTask(int taskId)
         {

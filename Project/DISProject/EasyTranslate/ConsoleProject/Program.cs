@@ -60,7 +60,18 @@ var newReviewId = myTaskReviewServiceInstance.AddReviewViaDapper();
 Console.WriteLine("\n Add a task review and return the Id of the new review.\n");
 Console.WriteLine("New Review ID: " + newReviewId);
 
-/* Service 7. View all previous tasks (client). */ 
+/* Service 7. View all translators of a specific language (in casu German) and their average
+ experience in the descending order. */
+var myTranslatorEmploymentServiceInstance = new TranslatorEmploymentService(connection);
+var result3 = myTranslatorEmploymentServiceInstance.GetTranslatorCompetenceViaDapper();
+
+Console.WriteLine("\n The list of all German translators " +
+                  "and their average years of experience: \n");
+foreach (var translator in result3)
+{
+    Console.WriteLine($"{translator.ContactName}, " +
+                      $"Total Experience: {translator.TotalExperienceYears}");
+}
 
 
 

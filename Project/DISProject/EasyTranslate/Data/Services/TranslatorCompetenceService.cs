@@ -18,7 +18,8 @@ public class TranslatorCompetenceService : ITranslatorCompetenceService
     }
     public IEnumerable<RatedTranslator> GetTranslatorsWithRatings()
     {
-        string[] languages = new string[] { "English", "Russian", "German" };
+        var languages = new string[] { "English", "Russian", "German" };
+        
         var sql = "SELECT translator.FirstName || ' ' || translator.LastName as ContactName, " +
                   "language.nameOfLang as Language, avg(tr.Stars) as AverageRating " +
                   "FROM Translator " +

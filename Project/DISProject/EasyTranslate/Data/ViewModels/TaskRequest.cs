@@ -17,5 +17,6 @@ public class TaskRequest
     public string? HouseNr { get; set; }
     public int TranslatorId { get; set; }
     public int LanguageId { get; set; }
+    public int TranslatorCompetenceId { get; set; }
 }
 
