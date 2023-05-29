@@ -13,7 +13,8 @@ namespace Data.Services
         {
             Connection = connection;
         }
-
+        
+        /* Add a task and return the Id of the new task. */
         public int AddTaskViaDapper()
         {
             var parameters = new
@@ -55,8 +56,7 @@ namespace Data.Services
             
             var parameter2 = new
             {
-                TranslatorCompetenceId = transCompId,
-                newTask = newTask
+                TranslatorCompetenceId = transCompId, newTask
             };
 
             int updateTaskTable = Connection.QuerySingle<int>(sqlUpdate, parameter2);

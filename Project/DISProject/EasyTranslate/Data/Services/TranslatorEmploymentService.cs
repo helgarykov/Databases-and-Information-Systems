@@ -49,7 +49,7 @@ public class TranslatorEmploymentService : ITranslatorEmploymentService
         ORDER BY 
             TotalExperienceYears DESC;";
 
-        var translatorExperienceGerman = Connection.Query<TranslatorExperience>(sql, new { lang = lang });
+        var translatorExperienceGerman = Connection.Query<TranslatorExperience>(sql, new {lang });
 
         return translatorExperienceGerman;
     }

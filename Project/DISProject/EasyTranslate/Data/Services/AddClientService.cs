@@ -7,25 +7,35 @@ namespace Data.Services;
 
 public class AddClientService : IAddClientService
 {
-    public IDbConnection Connection { get; }
+    private IDbConnection Connection { get; }
     
     public AddClientService(IDbConnection connection)
     {
         Connection = connection;
     }
     
-    //TODO: implement AddNewClient
+    /* Add a client and return the Id of the new client. */
     public IEnumerable<Client> AddClientViaDapper()
     {
-
-        var sql = "\n INSERT INTO Client (ContactName, Login, Password, Tlf, " +
-                  "CityAddress, Street, HouseNr, FeeMultiplier) \n " +
+        var parameter = new
+        {
+            ContactName = "Thomas Holtze",
+            Login = "thomas_hltze",
+            Password = "thh1982@l",
+            Tlf = "60 76 00 27",
+            CityAddress = "Birkeroed",
+            Street = "Husvej",
+            HouseNr = "12",
+            FeeMultiplier = 0.0
+        };
+        var sql = "INSERT INTO Client (ContactName, Login, Password, Tlf, " +
+                  "CityAddress, Street, HouseNr, FeeMultiplier) " +
                   "VALUES (@ContactName, @Login, @Password, @Tlf, " +
-                  "@CityAddress, @Street, @HouseNr, @FeeMultiplier); \n " +
-                  "SELECT CAST(SCOPE_IDENTITY() as int);";
+                  "@CityAddress, @Street, @HouseNr, @FeeMultiplier) " +
+                  "RETURNING Id;";
 
 
-        var newClient = Connection.Query<Client>(sql);
-        return newClient;
+        int newClientId = Connection.QuerySingle<int>(sql, parameter);
+        return newClientId;
     }
 }

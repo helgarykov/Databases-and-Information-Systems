@@ -32,7 +32,7 @@ public class TranslatorCompetenceService : ITranslatorCompetenceService
                   "WHEN language.nameOfLang = 'Russian' THEN 3 END, " +
                   "AVG(tr.Stars)";
         
-        IEnumerable<RatedTranslator> allRatedTranslators = Connection.Query<RatedTranslator>(sql,new {languages = languages});
+        IEnumerable<RatedTranslator> allRatedTranslators = Connection.Query<RatedTranslator>(sql,new {languages});
             
         return allRatedTranslators;
     } 

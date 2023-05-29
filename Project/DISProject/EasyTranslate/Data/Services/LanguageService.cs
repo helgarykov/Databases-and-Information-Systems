@@ -23,7 +23,7 @@ public class LanguageService : ILanguageService
                 SELECT language.id as Id, language.nameOfLang as nameoflang
                 FROM Language
                 WHERE NameOfLang = @lang
-            """, new { lang = lang});
+            """, new {lang});
            return language;
     }
 

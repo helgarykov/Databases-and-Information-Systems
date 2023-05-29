@@ -30,7 +30,7 @@ public class ClientFindTranslatorService : IClientFindTranslatorService
                   "WHEN language.nameOfLang = 'German' THEN 2 " +
                   "WHEN language.nameOfLang = 'Russian' THEN 3 END;";
         
-        IEnumerable<TranslatorWithLanguage> translators = Connection.Query<TranslatorWithLanguage>(sql, new { languages = languages });
+        IEnumerable<TranslatorWithLanguage> translators = Connection.Query<TranslatorWithLanguage>(sql, new {languages });
 
         return translators;
         
