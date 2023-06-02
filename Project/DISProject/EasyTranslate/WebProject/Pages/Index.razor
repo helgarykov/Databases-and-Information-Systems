@@ -1,9 +1,18 @@
 ﻿@page "/"
+@using BlazorProject.Data
+@using Dapper
+@using global::Data.Models
+@using global::Data.Services
+@using Task = System.Threading.Tasks.Task
+@inject TaskService NewTask
+@inject LoginIdentity Identity
 
-<PageTitle>Index</PageTitle>
+@using global::Data.Services
+@inject global::Data.Services.TaskService TaskService
 
-<h1>Hello, world!</h1>
+<PageTitle>Welcome to Easy Translate</PageTitle>
 
-Welcome to your new app.
+<h1>Dear client, welcome to your Easy Translate site!</h1>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<!-- Add the <img> tag here -->
+<img src="/download.jpeg" alt="My Image" />

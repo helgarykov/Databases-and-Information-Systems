@@ -1,0 +1,55 @@
+﻿@*
+$1$// @page "/" as initial home page #1#
+$1$ then "/task" #1#
+$1$ then "/task/list" #1#
+$1$ then "/task/list/taskId/Delete task" #1#
+$1$ or "/task/list/taskId/View task" #1#
+$1$ or "/translatorsGerman&English/list" #1#
+
+$1$
+This is a template for administrator adding a new client to the database .#1#
+
+@page "/"
+
+<PageTitle> Add a new client </PageTitle>
+
+@using BlazorProject.Data
+@using Dapper
+@using global::Data.Models
+@using global::Data.Services
+@using Task = System.Threading.Tasks.Task
+@inject AddClientService Clients
+@inject LoginIdentity Identity
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (showBanner)
+{
+    <div>Den er nu gemt!</div>
+}
+
+<div>
+    <EditForm Model="@client" OnSubmit="@SaveClient">
+        <InputText id="name" @bind-value="client.ContactName" />
+        <button type="submit">Submit</button>
+    </EditForm>
+</div>
+
+@code {
+    private Client client = new();
+    private bool showBanner = false;
+
+    private void SaveClient()
+    {
+        Clients.AddClientViaDapper();
+        showBanner = true;
+    }
+
+    // private void AddNewTask()
+    // {
+    //     TaskService.AddTask(Identity.Id);
+    // }
+}
+*@

@@ -12,7 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleProject\ConsoleProject.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\images\1.png" />
+    <None Include="wwwroot\css\images\download.jpeg" />
+    <None Include="wwwroot\css\images\EasyTranslate.jpeg" />
+    <None Include="wwwroot\css\images\myimage.png" />
   </ItemGroup>
 
 </Project>

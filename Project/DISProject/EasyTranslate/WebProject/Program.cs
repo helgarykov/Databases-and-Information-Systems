@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorProject.Data;
 using Data.Services;
+using Data.Models;
 using Npgsql;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,14 @@ builder.Services.AddTransient<IDbConnection>(provider => new NpgsqlConnection("U
                                                                               "Host=localhost;Port=5433;" +
                                                                               "Database=easy_translate;"));
 builder.Services.AddSingleton<AddClientService>();
+builder.Services.AddSingleton<LanguageService>();
+builder.Services.AddSingleton<ClientFindTranslatorService>();
+builder.Services.AddSingleton<TaskService>();
+builder.Services.AddScoped<LoginIdentity>(p => new LoginIdentity()
+{
+    Id = 22,
+    Name = "Home Travel Agency"
+});
 
 var app = builder.Build();
 
@@ -29,6 +39,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
 
 app.UseRouting();
 

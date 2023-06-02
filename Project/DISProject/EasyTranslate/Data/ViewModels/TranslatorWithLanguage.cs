@@ -7,5 +7,6 @@ public class TranslatorWithLanguage
     public string Email { get; set; }
     public string Tlf { get; set; }
     public string Language { get; set; }
+    public string CategoryName { get; set; }
   
 }

@@ -1,5 +1,6 @@
-﻿@page "/fetchdata"
-
+﻿@*
+@page "/fetchdata"
+$1$ This is a template for administrator adding a new client to the database .#1#
 <PageTitle>Weather forecast</PageTitle>
 
 @using BlazorProject.Data
@@ -21,8 +22,14 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Address</th>
+                <th>ContactName</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Tfl</th>
+                <th>CityAddress</th>
+                <th>Street</th>
+                <th>HouseNr</th>
+                <th>FeeMultiplier</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +37,13 @@ else
             {
                 <tr>
                     <td>@client.ContactName</td>
-                    <td>@client.Street</td>
+                     <th>@client.Login</th>
+                     <th>@client.Password</th>
+                     <th>@client.Tlf</th>
+                     <th>@client.CityAddress</th>
+                     <th>@client.Street</th>
+                     <th>@client.HouseNr</th>
+                     <th>@client.FeeMultiplier</th>
                 </tr>
             }
         </tbody>
@@ -45,3 +58,4 @@ else
         clients = Clients.AddClientViaDapper();
     }
 }
+*@

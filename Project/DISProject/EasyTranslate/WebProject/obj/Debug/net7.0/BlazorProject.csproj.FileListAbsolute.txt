@@ -70,3 +70,8 @@
 /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/obj/Debug/net7.0/BlazorProject.pdb
 /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/obj/Debug/net7.0/BlazorProject.genruntimeconfig.cache
 /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/obj/Debug/net7.0/ref/BlazorProject.dll
+/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/bin/Debug/net7.0/ConsoleProject.deps.json
+/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/bin/Debug/net7.0/ConsoleProject.runtimeconfig.json
+/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/bin/Debug/net7.0/ConsoleProject
+/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/bin/Debug/net7.0/ConsoleProject.dll
+/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/bin/Debug/net7.0/ConsoleProject.pdb

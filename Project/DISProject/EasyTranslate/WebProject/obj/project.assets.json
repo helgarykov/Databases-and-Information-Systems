@@ -47,6 +47,19 @@
           }
         }
       },
+      "ConsoleProject/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ConsoleProject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ConsoleProject.dll": {}
+        }
+      },
       "Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -157,6 +170,11 @@
         "postgresql.png"
       ]
     },
+    "ConsoleProject/1.0.0": {
+      "type": "project",
+      "path": "../ConsoleProject/ConsoleProject.csproj",
+      "msbuildProject": "../ConsoleProject/ConsoleProject.csproj"
+    },
     "Data/1.0.0": {
       "type": "project",
       "path": "../Data/Data.csproj",
@@ -165,6 +183,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "ConsoleProject >= 1.0.0",
       "Dapper >= 2.0.123",
       "Data >= 1.0.0",
       "Npgsql >= 8.0.0-preview.4"
@@ -195,6 +214,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/ConsoleProject/ConsoleProject.csproj": {
+              "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/ConsoleProject/ConsoleProject.csproj"
+            },
             "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj": {
               "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj"
             }

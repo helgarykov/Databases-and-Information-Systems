@@ -1,0 +1,64 @@
+@page "/retrivetarnslatorswithcategories"
+
+
+
+@using BlazorProject.Data
+@using global::Data.Models
+@using global::Data.Services
+@using global::Data.ViewModels
+@using Task = System.Threading.Tasks.Task
+@inject ClientFindTranslatorService TranslatorService
+
+
+<h5>Get English, German and Russian Translators</h5>
+
+<button class="btn btn-primary" @onclick="GetCertainTranslator">Click me</button>
+<button class="btn btn-primary" @onclick="OnInitialized">Reset</button>
+
+
+<h3>All Translators</h3>
+
+@if (translators == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>TranslatorId</th>
+            <th>ContactName</th>
+            <th>Email</th>
+            <th>Language</th>
+            <th>CategoryName</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var translator in translators)
+        {
+            <tr>
+                <td>@translator.TranslatorId</td>
+                <td>@translator.ContactName</td>
+                <td>@translator.Email</td>
+                <td>@translator.Language</td>
+                <td>@translator.CategoryName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+@code {
+    private IEnumerable<TranslatorWithLanguage> translators;
+
+    protected override void OnInitialized()
+    {
+        translators = TranslatorService.GetAllTranslatorsViaDapper();
+    }
+
+    protected void GetCertainTranslator()
+    {
+        translators = TranslatorService.GetTranslatorsViaDapper();
+    }
+}
+

@@ -14,8 +14,8 @@ public class AddClientService : IAddClientService
         Connection = connection;
     }
     
-    /* Add a client and return the Id of the new client. */
-    public IEnumerable<Client> AddClientViaDapper()
+    /* Administrator add a client and return the Id of the new client. */
+    public int AddClientViaDapper()
     {
         var parameter = new
         {
