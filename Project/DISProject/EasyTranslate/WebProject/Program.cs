@@ -12,7 +12,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-//builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddTransient<IDbConnection>(provider => new NpgsqlConnection("User ID=postgres;Password=1234;" +
                                                                               "Host=localhost;Port=5433;" +
                                                                               "Database=easy_translate;"));
@@ -20,6 +19,12 @@ builder.Services.AddSingleton<AddClientService>();
 builder.Services.AddSingleton<LanguageService>();
 builder.Services.AddSingleton<ClientFindTranslatorService>();
 builder.Services.AddSingleton<TaskService>();
+builder.Services.AddSingleton<MyTasksService>();
+builder.Services.AddSingleton<TaskReviewService>();
+builder.Services.AddSingleton<TranslatorCompetenceService>();
+builder.Services.AddSingleton<TranslatorEmploymentService>();
+builder.Services.AddSingleton<TranslatorWithLowestFeeService>();
+builder.Services.AddSingleton<FeesAndCategories>();
 builder.Services.AddScoped<LoginIdentity>(p => new LoginIdentity()
 {
     Id = 22,

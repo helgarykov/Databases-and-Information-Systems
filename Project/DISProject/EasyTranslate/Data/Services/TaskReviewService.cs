@@ -1,6 +1,7 @@
 using System.Data;
 using Dapper;
 using Data.IServices;
+using Data.Models;
 
 namespace Data.Services;
 
@@ -14,8 +15,31 @@ public class TaskReviewService : ITaskReviewService
         Connection = connection;
     }
     
-    /* Add a task review and return the Id of the new review. */
-    public int AddReviewViaDapper()
+    public int AddReviewViaDapper(TaskReview review)
+    {
+        var parameters = new 
+        {
+            review.DateOfReview,
+            review.Body,
+            review.Stars,
+            review.TaskId,
+            review.ClientId,
+            review.TranslatorId,
+            review.LanguageId,
+        };
+        var sql = "INSERT INTO Task_Review (DateOfReview, Body," +
+                  " Stars, TaskId, ClientId, TranslatorId, LanguageId) " +
+                  "VALUES (@DateOfReview, @Body, @Stars, @TaskId, @ClientId," +
+                  " @TranslatorId, @LanguageId) " +
+                  "RETURNING Id;";
+
+        int newId = Connection.QuerySingle<int>(sql, parameters);
+
+        return newId;
+    }
+    
+    /* Test Function. Not for Blazor. Add a task review and return the Id of the new review. */
+    /*public int AddReviewViaDapper()
     {
         var parameters = new 
         {
@@ -37,6 +61,6 @@ public class TaskReviewService : ITaskReviewService
         int newId = Connection.QuerySingle<int>(sql, parameters);
 
         return newId;
-    }
+    }*/
 }
 

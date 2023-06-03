@@ -1,0 +1,59 @@
+@page "/retrievefees"
+
+@using BlazorProject.Data
+@using Dapper
+@using global::Data.ViewModels
+@using global::Data.Services
+@using Task = System.Threading.Tasks.Task
+@inject FeesAndCategories Fee
+@inject TranslatorWithLowestFeeService LowestFee
+@inject LoginIdentity Identity
+@using global::Data.Services
+
+<h5>Get German Translators and their Fees — from Lowest to Highest</h5>
+
+@*TODO: make two buttons to click on and get/reset this query. Add necessary fields to the table below*@
+@* public class TranslatorWithLowestFee
+{
+    public string? ContactName { get; set; }
+    
+    public string? Language { get; set; }
+    
+    public double OralFee { get; set; }
+    
+    public double WrittenFee { get; set; }
+    
+    public double PhoneFee { get; set; }
+    
+    public double TransportCostFee { get; set; }
+    
+    public double TransportTimeFee { get; set; }
+}*@
+
+@code {
+
+    // call GetTranslatorsWithLowestFees();
+
+}
+
+
+<h3>View Translator Fees</h3>
+
+@*TODO: complete Fees View*@
+@*public class Category
+{
+    public int Id { get; set; }
+    public string CategoryName { get; set; }
+    public float OralFee { get; set; }
+    public float WrittenFee { get; set; }
+    public float PhoneFee { get; set; }
+    public float TransportCostFee { get; set; }
+    public float TransportTimeFee { get; set; }
+    
+}*@
+
+@code {
+
+    // call GetFeesViaDapper();
+
+}

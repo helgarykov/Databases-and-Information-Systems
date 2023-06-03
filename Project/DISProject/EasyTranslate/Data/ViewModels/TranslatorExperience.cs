@@ -1,6 +1,8 @@
+using Data.Models;
+
 namespace Data.ViewModels;
 
-public class TranslatorExperience
+public class TranslatorExperience : TranslatorWithLanguage
 {
     public string ContactName { get; set; }
     

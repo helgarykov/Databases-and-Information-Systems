@@ -1,6 +1,8 @@
+using Data.Models;
+
 namespace Data.ViewModels;
 
-public class TranslatorWithLanguage
+public class TranslatorWithLanguage : Translator
 {
     public int TranslatorId { get; }
     public string ContactName { get; }

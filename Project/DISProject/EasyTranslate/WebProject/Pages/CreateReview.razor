@@ -1,0 +1,31 @@
+@page "/createreview"
+
+@using BlazorProject.Data
+@using Dapper
+@using global::Data.ViewModels
+@using global::Data.Services
+@using Task = System.Threading.Tasks.Task
+@inject TaskReviewService Review
+@inject LoginIdentity Identity
+@using global::Data.Services
+
+<h3>Create a Review of your Task</h3>
+
+@*TODO: complete fill in form for Task Review as in CreateTask.razor *@
+@*
+   var parameters = new 
+        {
+            review.DateOfReview,
+            review.Body,
+            review.Stars,
+            review.TaskId,
+            review.ClientId,
+            review.TranslatorId,
+            review.LanguageId,
+        };*@
+
+@code {
+
+    // call AddReviewViaDapper;
+
+}

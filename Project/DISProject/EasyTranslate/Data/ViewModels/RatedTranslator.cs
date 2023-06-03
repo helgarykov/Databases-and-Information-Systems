@@ -1,6 +1,6 @@
 namespace Data.ViewModels;
 
-public class RatedTranslator
+public class RatedTranslator : TranslatorWithLanguage
 {
     public string ContactName { get; }
     public string Language { get; set; }

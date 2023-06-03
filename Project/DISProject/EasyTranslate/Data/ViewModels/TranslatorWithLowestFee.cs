@@ -1,6 +1,8 @@
+using Data.Models;
+
 namespace Data.ViewModels;
 
-public class TranslatorWithLowestFee
+public class TranslatorWithLowestFee : Translator
 {
     public string? ContactName { get; set; }
     
