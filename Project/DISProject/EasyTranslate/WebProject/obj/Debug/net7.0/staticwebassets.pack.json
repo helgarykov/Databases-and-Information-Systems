@@ -13,26 +13,6 @@
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/wwwroot/css/images/.DS_Store",
-      "PackagePath": "staticwebassets/css/images/.DS_Store"
-    },
-    {
-      "Id": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/wwwroot/css/images/1.png",
-      "PackagePath": "staticwebassets/css/images/1.png"
-    },
-    {
-      "Id": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/wwwroot/css/images/EasyTranslate.jpeg",
-      "PackagePath": "staticwebassets/css/images/EasyTranslate.jpeg"
-    },
-    {
-      "Id": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/wwwroot/css/images/download.jpeg",
-      "PackagePath": "staticwebassets/css/images/download.jpeg"
-    },
-    {
-      "Id": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/wwwroot/css/images/myimage.png",
-      "PackagePath": "staticwebassets/css/images/myimage.png"
-    },
-    {
       "Id": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/wwwroot/css/open-iconic/FONT-LICENSE",
       "PackagePath": "staticwebassets/css/open-iconic"
     },
