@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BJdoRk7YKv0uVWjQk8D/J9DJL45mKpgq3/3Y52Mgyw6nqmq+f8Hw1vD0n4D4sacGX4FoeTIFvqDElCVRFk+vlA==",
+  "success": true,
+  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj",
+  "expectedPackageFiles": [
+    "/Users/helgarykov/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
+    "/Users/helgarykov/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "/Users/helgarykov/.nuget/packages/npgsql/8.0.0-preview.4/npgsql.8.0.0-preview.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="MyBin\AddClientForm.razor" />
+    <_ContentIncludedByDefault Remove="MyBin\ClientExample.razor" />
+  </ItemGroup>
+
 </Project>
