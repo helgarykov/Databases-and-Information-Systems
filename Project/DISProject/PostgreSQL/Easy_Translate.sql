@@ -1,3 +1,124 @@
+CREATE TABLE Client (
+    Id SERIAL PRIMARY KEY,
+    ContactName VARCHAR(30),
+	Login TEXT NOT NULL, 
+	Password TEXT NOT NULL,
+    Tlf VARCHAR(20) UNIQUE,											
+    CityAddress VARCHAR(30),
+	Street VARCHAR(50),
+	HouseNr VARCHAR(20),
+    FeeMultiplier FLOAT											
+);
+
+CREATE TABLE Category (
+    Id SERIAL PRIMARY KEY,
+    CategoryName VARCHAR(11) NOT NULL,
+    OralFee FLOAT,
+    WrittenFee FLOAT,
+    PhoneFee FLOAT,
+    TransportCostFee FLOAT,
+    TransportTimeFee FLOAT
+);
+
+
+CREATE TABLE Translator (
+    Id SERIAL PRIMARY KEY,
+    FirstName VARCHAR(30) NOT NULL,
+    LastName VARCHAR(30) NOT NULL,
+    Age INT DEFAULT 18 CHECK (Age >= 18 AND Age <= 70),CityAddress VARCHAR(30),
+	Street VARCHAR(50),
+	HouseNr VARCHAR(20),
+    Email VARCHAR(50) UNIQUE,
+    Tlf VARCHAR(20) UNIQUE,
+    Education TEXT NOT NULL
+);
+
+
+CREATE TABLE Language (
+    Id SERIAL PRIMARY KEY,
+    NameOfLang VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Translator_Competence (
+    Id SERIAL PRIMARY KEY,
+    TranslatorId INT REFERENCES Translator(Id),
+    LanguageId INT REFERENCES Language(Id),
+    CategoryId INT REFERENCES Category(Id)
+);
+
+CREATE TABLE Task (
+    Id SERIAL PRIMARY KEY,
+	TaskType VARCHAR(30) NOT NULL,
+    DateOfTask DATE NOT NULL,
+    StartTime TIME NOT NULL,
+    EndTime TIME NOT NULL,
+    Urgent INT,													
+    Difficult INT,
+	CityAddress VARCHAR(30) NULL,
+	Street VARCHAR(50) NULL,
+	HouseNr VARCHAR(20) NULL,
+    TranslatorCompetenceID INT REFERENCES Translator_Competence(Id),	-- references concrete translator and her language used 
+    ClientId INT REFERENCES Client(Id) ON DELETE CASCADE,		-- 'has a'-relationship between task and client
+	TranslatorId INT REFERENCES Translator(Id) ON DELETE NO ACTION,
+	LanguageID INT REFERENCES Language(Id) ON DELETE NO ACTION
+);
+
+CREATE TABLE Task_Review (
+    Id SERIAL PRIMARY KEY,
+    DateOfReview DATE NOT NULL,
+    Body TEXT,
+    Stars INT DEFAULT 0 CHECK (Stars >= 1 AND Stars <= 5),
+    TaskId INT REFERENCES Task(Id) ON DELETE CASCADE,
+	ClientId INT REFERENCES Client(Id) ON DELETE NO ACTION,
+	TranslatorId INT REFERENCES Translator(Id) ON DELETE NO ACTION,
+	LanguageID INT REFERENCES Language(Id) ON DELETE NO ACTION
+);
+
+
+CREATE TABLE Translator_Employment (
+    Id SERIAL PRIMARY KEY,
+    EmploymentDate DATE NOT NULL,   -- min employmentDate indtil i dag (fra 1.ansættelse til i dag)
+    DismissalDate DATE,		        -- max dissmissalDate		(if NOT NULL then the translator must be employed and not be dissmissed)						
+    Position TEXT NOT NULL,
+    CompanyName TEXT NOT NULL,
+    TranslatorID INT REFERENCES Translator(Id) ON DELETE CASCADE       -- group by Translator_ID
+);
+
+-- Fun for Task Table to get TranslatorId
+CREATE FUNCTION transfun(p_id integer) RETURNS integer AS $$
+    SELECT COALESCE(TranslatorId, 0)
+    FROM Translator_Competence AS tc
+    WHERE tc.id = p_id;
+$$ LANGUAGE SQL;
+
+-- Fun for Task Table to get LanguageId
+CREATE FUNCTION langfun(p_id integer) RETURNS integer AS $$
+    SELECT COALESCE(LanguageId, 0)
+    FROM Translator_Competence AS tc
+    WHERE tc.id = p_id;
+$$ LANGUAGE SQL;
+
+-- Fun for Task_Review Table to get TranslatorId
+CREATE OR REPLACE FUNCTION transfun1(p_id integer) 
+RETURNS integer AS $$
+    SELECT COALESCE (TC.TranslatorId, 0) 
+    FROM Task_Review AS TR
+	INNER JOIN Task AS T ON TR.TaskId = T.Id
+	INNER JOIN Translator_Competence AS TC ON T.TranslatorCompetenceID = TC.Id
+    WHERE TR.Id = p_id;
+$$ LANGUAGE SQL;
+
+-- Fun for Task_Review Table to get LanguageId
+CREATE OR REPLACE FUNCTION langfun1(p_id integer) 
+RETURNS integer AS $$
+    SELECT COALESCE (TC.LanguageId, 0) 
+    FROM Task_Review AS TR
+	INNER JOIN Task AS T ON TR.TaskId = T.Id
+	INNER JOIN Translator_Competence AS TC ON T.TranslatorCompetenceID = TC.Id
+    WHERE TR.Id = p_id;
+$$ LANGUAGE SQL;
+
+start transaction;
 
 INSERT INTO Category (Id, CategoryName, OralFee, WrittenFee, PhoneFee, TransportCostFee, TransportTimeFee)
 VALUES (1, 'Category 1', 410, 4.5, 400, 205, 3.13),
@@ -26,8 +147,8 @@ VALUES
     ('Natalia', 'Smirnova', 31, 'Esbjerg', 'Lindetræsvej', '904', 'nataliasmirnova@gmail.com', '4012 1859', 'PhD'),
     ('Dmitri', 'Kuznetsov', 67, 'Copenhagen', 'Egevej', '1005', 'dmitrikuznetsov@gmail.com', '6012 1860', 'Secondary School'),
 	('Helga', 'Ibsen', 41, 'Copenhagen', 'Lundtoftegade', '83', 'helgaibsen@gmail.com', '6033 1860', 'BA of Humanities'),
-	('Senta', 'Abrahamsen', 65, 'Hellerup', 'Mosevej', '102', 'sentaabrahamsen@gmail.com', '3412 2260', 'Secondary School')
-;
+	('Senta', 'Abrahamsen', 65, 'Hellerup', 'Mosevej', '102', 'sentaabrahamsen@gmail.com', '3412 2260', 'Secondary School');
+
 
 INSERT INTO Language (Id, NameOfLang)
 VALUES (1, 'English'),
@@ -220,7 +341,6 @@ VALUES
 	(34, 'Written Translation', '2022-10-11', '06:00', '23:00', 0, 0, 'Odense', 'Ahornvej', '789', 7, 13, (SELECT transfun(7)), (SELECT langfun(7))),
 	(35, 'Written Translation', '2023-01-04', '06:00', '23:00', 1, 0, 'Esbjerg', 'Lindevej', '202', 1, 15, (SELECT transfun(1)), (SELECT langfun(1)));
 
-
 INSERT INTO Task_Review (Id, DateOfReview, Body, Stars, TaskId, ClientId, TranslatorId, LanguageID)
 VALUES
     (1, '2020-05-22', 'Fremragende arbejde!', 5, 1, 1, (SELECT transfun1(1)), (SELECT langfun1(1))),
@@ -248,7 +368,6 @@ VALUES
     (23, '2022-06-23', 'Ikke særlig god oversættelse: tolken har lavet flere fejl med juridiske termer.', 1, 33, 33, (SELECT transfun1(33)), (SELECT langfun1(33))),
     (24, '2022-10-24', 'Meget tilfreds med oversættelsen.', 5, 34, 20, (SELECT transfun1(34)), (SELECT langfun1(34))),
     (25, '2023-01-25', 'Fantastisk oversættelse!', 5, 35, 12, (SELECT transfun1(35)), (SELECT langfun1(35))); 
-
 
 INSERT INTO Translator_Employment (Id, EmploymentDate, DismissalDate, Position, CompanyName, TranslatorID)
 VALUES
@@ -333,5 +452,4 @@ VALUES
 	(79, '2020-07-15', NULL, 'Tolk', 'Easy Translate', 19),
 	(80, '2020-03-01', NULL, 'Tolk og oversætter', 'Easy Translate', 20);
 
-
-
+    commit;

@@ -3,6 +3,7 @@
 @using BlazorProject.Data
 @using Dapper
 @using global::Data.ViewModels
+@using global::Data.Models
 @using global::Data.Services
 @using Task = System.Threading.Tasks.Task
 @inject FeesAndCategories Fee
@@ -12,48 +13,52 @@
 
 <h5>Get German Translators and their Fees — from Lowest to Highest</h5>
 
-@*TODO: make two buttons to click on and get/reset this query. Add necessary fields to the table below. See evt. Languages.razor *@
-@* public class TranslatorWithLowestFee
+
+
+<h3>View Translator Fees</h3
+
+@if (fees == null)
 {
-    public string? ContactName { get; set; }
-    
-    public string? Language { get; set; }
-    
-    public double OralFee { get; set; }
-    
-    public double WrittenFee { get; set; }
-    
-    public double PhoneFee { get; set; }
-    
-    public double TransportCostFee { get; set; }
-    
-    public double TransportTimeFee { get; set; }
-}*@
-
-@code {
-
-    // call GetTranslatorsWithLowestFees();
-
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Oral fee</th>
+                <th>Written fee</th>
+                <th>Phone fee</th>
+                <th>Transport cost fee</th>
+                <th>Transport time fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fee in fees)
+            {
+                <tr>
+                    <td>@fee.Id</td>
+                    <td>@fee.CategoryName</td>
+                    <td>@fee.OralFee</td>
+                    <td>@fee.WrittenFee</td>
+                    <td>@fee.PhoneFee</td>
+                    <td>@fee.TransportCostFee</td>
+                    <td>@fee.TransportTimeFee</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
-
-<h3>View Translator Fees</h3>
-
-@*TODO: complete Fees View*@
-@*public class Category
-{
-    public int Id { get; set; }
-    public string CategoryName { get; set; }
-    public float OralFee { get; set; }
-    public float WrittenFee { get; set; }
-    public float PhoneFee { get; set; }
-    public float TransportCostFee { get; set; }
-    public float TransportTimeFee { get; set; }
-    
-}*@
-
 @code {
 
-    // call GetFeesViaDapper();
+    private IEnumerable<Category>? fees;
+
+    protected override void OnInitialized()
+    {
+        fees = Fee.GetFeesViaDapper();
+    }
 
 }
