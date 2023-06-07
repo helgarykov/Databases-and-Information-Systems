@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ELdfEOotAkQpNivBWpKthsARA0QUNBU5pqc+KV3aISAkvfy6k18mv/dcIlYPTZd6jf7rE0t1R8IpacZ0ZlWG3w==",
+  "dgSpecHash": "PIbScpraEJdpeUok9kvcbPpwrsW4aN9ky8lctBtI+SYZbxM8IYQ3BVTLf5QJUg7Jp2IgOX2GDt0iLW+4M2GTTQ==",
   "success": true,
-  "projectFilePath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/ConsoleProject/ConsoleProject.csproj",
+  "projectFilePath": "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\ConsoleProject\\ConsoleProject.csproj",
   "expectedPackageFiles": [
-    "/Users/helgarykov/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
-    "/Users/helgarykov/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "/Users/helgarykov/.nuget/packages/npgsql/8.0.0-preview.4/npgsql.8.0.0-preview.4.nupkg.sha512"
+    "C:\\Users\\Victo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\npgsql\\8.0.0-preview.4\\npgsql.8.0.0-preview.4.nupkg.sha512"
   ],
   "logs": []
 }

@@ -10,3 +10,15 @@
 /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/obj/Debug/net7.0/refint/Data.dll
 /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/obj/Debug/net7.0/Data.pdb
 /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/obj/Debug/net7.0/ref/Data.dll
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\bin\Debug\net7.0\Data.deps.json
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\bin\Debug\net7.0\Data.dll
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\bin\Debug\net7.0\Data.pdb
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.csproj.AssemblyReference.cache
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.AssemblyInfoInputs.cache
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.AssemblyInfo.cs
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.dll
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\refint\Data.dll
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\Data.pdb
+C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\Data\obj\Debug\net7.0\ref\Data.dll

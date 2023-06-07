@@ -9,69 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorProject
 build_property.RootNamespace = BlazorProject
-build_property.ProjectDir = /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/
+build_property.ProjectDir = C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\WebProject\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject
+build_property.MSBuildProjectDirectory = C:\Users\Victo\Documents\GitHub\Databases-and-Information-Systems\Project\DISProject\EasyTranslate\WebProject
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/App.razor]
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/CreateReview.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlUmV2aWV3LnJhem9y
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/CreateReview.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUmV2aWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/CreateTask.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlVGFzay5yYXpvcg==
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/CreateTask.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlVGFzay5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/Fees.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmVlcy5yYXpvcg==
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/Fees.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/Languages.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGFuZ3VhZ2VzLnJhem9y
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/Languages.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFuZ3VhZ2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/NavigationMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmF2aWdhdGlvbk1lbnUucmF6b3I=
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/Translators.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNsYXRvcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/Translators.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNsYXRvcnMucmF6b3I=
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/_Imports.razor]
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-u64m9gwoct
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-99etk7fp5q
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-rrj01g35io
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ul0yt7to2o
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/_Host.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/Pages/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+[C:/Users/Victo/Documents/GitHub/Databases-and-Information-Systems/Project/DISProject/EasyTranslate/WebProject/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

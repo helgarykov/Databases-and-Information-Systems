@@ -190,35 +190,37 @@
     ]
   },
   "packageFolders": {
-    "/Users/helgarykov/.nuget/packages/": {}
+    "C:\\Users\\Victo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/BlazorProject.csproj",
+      "projectUniqueName": "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\WebProject\\BlazorProject.csproj",
       "projectName": "BlazorProject",
-      "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/BlazorProject.csproj",
-      "packagesPath": "/Users/helgarykov/.nuget/packages/",
-      "outputPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/WebProject/obj/",
+      "projectPath": "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\WebProject\\BlazorProject.csproj",
+      "packagesPath": "C:\\Users\\Victo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\WebProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/helgarykov/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/ConsoleProject/ConsoleProject.csproj": {
-              "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/ConsoleProject/ConsoleProject.csproj"
+            "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\ConsoleProject\\ConsoleProject.csproj": {
+              "projectPath": "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\ConsoleProject\\ConsoleProject.csproj"
             },
-            "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj": {
-              "projectPath": "/Users/helgarykov/Documents/DIS/Project/DISProject/EasyTranslate/Data/Data.csproj"
+            "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Victo\\Documents\\GitHub\\Databases-and-Information-Systems\\Project\\DISProject\\EasyTranslate\\Data\\Data.csproj"
             }
           }
         }
@@ -261,7 +263,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
