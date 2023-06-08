@@ -102,20 +102,18 @@ $$ LANGUAGE SQL;
 CREATE OR REPLACE FUNCTION transfun1(p_id integer) 
 RETURNS integer AS $$
     SELECT COALESCE (TC.TranslatorId, 0) 
-    FROM Task_Review AS TR
-	INNER JOIN Task AS T ON TR.TaskId = T.Id
+    FROM Task AS T
 	INNER JOIN Translator_Competence AS TC ON T.TranslatorCompetenceID = TC.Id
-    WHERE TR.Id = p_id;
+    WHERE T.id = p_id;
 $$ LANGUAGE SQL;
 
 -- Fun for Task_Review Table to get LanguageId
 CREATE OR REPLACE FUNCTION langfun1(p_id integer) 
 RETURNS integer AS $$
     SELECT COALESCE (TC.LanguageId, 0) 
-    FROM Task_Review AS TR
-	INNER JOIN Task AS T ON TR.TaskId = T.Id
+	FROM Task AS T
 	INNER JOIN Translator_Competence AS TC ON T.TranslatorCompetenceID = TC.Id
-    WHERE TR.Id = p_id;
+    WHERE T.id = p_id;
 $$ LANGUAGE SQL;
 
 start transaction;
@@ -341,6 +339,7 @@ VALUES
 	(34, 'Written Translation', '2022-10-11', '06:00', '23:00', 0, 0, 'Odense', 'Ahornvej', '789', 7, 13, (SELECT transfun(7)), (SELECT langfun(7))),
 	(35, 'Written Translation', '2023-01-04', '06:00', '23:00', 1, 0, 'Esbjerg', 'Lindevej', '202', 1, 15, (SELECT transfun(1)), (SELECT langfun(1)));
 
+
 INSERT INTO Task_Review (Id, DateOfReview, Body, Stars, TaskId, ClientId, TranslatorId, LanguageID)
 VALUES
     (1, '2020-05-22', 'Fremragende arbejde!', 5, 1, 1, (SELECT transfun1(1)), (SELECT langfun1(1))),
@@ -434,7 +433,7 @@ VALUES
 	(61, '2021-03-15', NULL, 'Tolk og oversætter', 'Easy Translate', 1),
 	(62, '2021-07-01', NULL, 'Oversætter', 'Easy Translate', 2),
 	(63, '2020-02-15', NULL, 'Tolk og oversætter', 'Easy Translate', 3),
-	(64, '2020-01-01',NULL, 'Tolk', 'Easy Translate', 4),
+	(64, '2020-01-01', NULL, 'Tolk', 'Easy Translate', 4),
 	(65, '2020-06-10', NULL, 'Oversætter', 'Easy Translate', 5),
 	(66, '2020-01-01', NULL, 'Tolk og oversætter', 'Easy Translate', 6),
 	(67, '2021-09-01', NULL, 'Tolk', 'Easy Translate', 7),
