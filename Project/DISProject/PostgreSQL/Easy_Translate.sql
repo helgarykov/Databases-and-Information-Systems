@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS easy_translate;
+CREATE DATABASE easy_translate;
+\c easy_translate
+
 CREATE TABLE Client (
     Id SERIAL PRIMARY KEY,
     ContactName VARCHAR(30),
