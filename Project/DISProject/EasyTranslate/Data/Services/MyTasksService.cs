@@ -1,6 +1,7 @@
 using System.Data;
 using Dapper;
 using Data.IServices;
+using Data.Models;
 
 namespace Data.Services;
 
@@ -13,9 +14,9 @@ public class MyTasksService : IMyTasksService
         Connection = connection;
     }
 
-    public IEnumerable<Task> GetClientTasksViaDapper(int clientId)
+    public IEnumerable<MyTask> GetClientTasksViaDapper(int clientId)
     {
-        var tasks = Connection.Query<Task>(sql: $@"
+        var tasks = Connection.Query<MyTask>(sql: $@"
             SELECT *
             FROM Task
             WHERE ClientId = {clientId}

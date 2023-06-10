@@ -1,6 +1,6 @@
 namespace Data.Models;
 
-public class Task
+public class MyTask
 {
     private string? _taskType;
     private DateTime _dateOfTask;

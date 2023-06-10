@@ -1,6 +1,8 @@
+using Data.Models;
+
 namespace Data.IServices;
 
 public interface IMyTasksService
 {
-    public IEnumerable<Task> GetClientTasksViaDapper(int clientId);
+    public IEnumerable<MyTask> GetClientTasksViaDapper(int clientId);
 }

@@ -64,7 +64,7 @@ public class TaskService : ITaskService
     }
         
     /* Update the task and return the Id of the new task. */
-    public async Task UpdateTaskAsync(int taskId, Data.Models.Task taskToUpdate)
+    public async Task UpdateTaskAsync(int taskId, Data.Models.MyTask taskToUpdate)
     {
         // Create the SQL statement to update the task.
         var sql = "UPDATE Task SET TaskType = @TaskType, DateOfTask = @DateOfTask, StartTime = @StartTime, EndTime = @EndTime, Urgent = @Urgent, Difficult = @Difficult, CityAddress = @CityAddress, Street = @Street, HouseNr = @HouseNr, TranslatorId = @TranslatorId, LanguageId = @LanguageId WHERE Id = @Id";
