@@ -9,6 +9,8 @@ This project was collaborated on by:
 ### DIS-Project (report)
 Design choices, practical information (such as how to run) and such can be found the report. Please take a look.
 
+**Looking for the ER-Diagram?** It lies within the report. You're welcome.
+
 ### EasyTranslate directory
 Contains the server code. Required to run the code: `.NET 7.203`. Subsequent dependencies can be seen in the report.
 
