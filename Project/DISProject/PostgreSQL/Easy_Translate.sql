@@ -341,7 +341,18 @@ VALUES
 	(32, 'Written Translation', '2021-09-22', '06:00', '23:00', 1, 0, 'Frederiksberg', 'Elmevej', '303', 15, 6, (SELECT transfun(15)), (SELECT langfun(15))),
 	(33, 'Written Translation', '2022-06-20', '06:00', '23:00', 0, 0, 'Naestved', 'Kastanievej', '601', 32, 9, (SELECT transfun(32)), (SELECT langfun(32))),
 	(34, 'Written Translation', '2022-10-11', '06:00', '23:00', 0, 0, 'Odense', 'Ahornvej', '789', 7, 13, (SELECT transfun(7)), (SELECT langfun(7))),
-	(35, 'Written Translation', '2023-01-04', '06:00', '23:00', 1, 0, 'Esbjerg', 'Lindevej', '202', 1, 15, (SELECT transfun(1)), (SELECT langfun(1)));
+	(35, 'Written Translation', '2023-01-04', '06:00', '23:00', 1, 0, 'Esbjerg', 'Lindevej', '202', 1, 15, (SELECT transfun(1)), (SELECT langfun(1))),
+    (36, 'Oral Interpretation', '2023-02-27', '09:00', '17:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 52, 22, (SELECT transfun(52)), (SELECT langfun(52))),
+	(37, 'Oral Interpretation', '2022-08-03', '09:00', '16:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 53, 22, (SELECT transfun(53)), (SELECT langfun(53))),
+	(38, 'Oral Interpretation', '2022-11-08', '09:00', '15:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 11, 22, (SELECT transfun(11)), (SELECT langfun(11))),
+	(39, 'Oral Interpretation', '2022-07-08', '09:00', '15:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 55, 22, (SELECT transfun(55)), (SELECT langfun(55))),
+	(40, 'Oral Interpretation', '2023-05-08', '09:00', '15:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 57, 22, (SELECT transfun(57)), (SELECT langfun(57))),
+	(41, 'Oral Interpretation', '2022-03-18', '09:00', '15:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 58, 22, (SELECT transfun(58)), (SELECT langfun(58))),
+	(42, 'Oral Interpretation', '2021-05-12', '09:00', '15:00', 0, 0,  'Naestved', 'Hovedgaden', '789', 8, 22, (SELECT transfun(8)), (SELECT langfun(8))),
+	(43, 'Written Translation', '2021-09-22', '06:00', '23:00', 1, 0, 'Frederiksberg', 'Elmevej', '303', 15, 22, (SELECT transfun(15)), (SELECT langfun(15))),
+	(44, 'Written Translation', '2022-06-20', '06:00', '23:00', 0, 0, 'Naestved', 'Kastanievej', '601', 32, 22, (SELECT transfun(32)), (SELECT langfun(32))),
+	(45, 'Written Translation', '2022-10-11', '06:00', '23:00', 0, 0, 'Odense', 'Ahornvej', '789', 7, 22, (SELECT transfun(7)), (SELECT langfun(7))),
+	(46, 'Written Translation', '2023-01-04', '06:00', '23:00', 1, 0, 'Esbjerg', 'Lindevej', '202', 1, 22, (SELECT transfun(1)), (SELECT langfun(1)));
 
 
 INSERT INTO Task_Review (Id, DateOfReview, Body, Stars, TaskId, ClientId, TranslatorId, LanguageID)
