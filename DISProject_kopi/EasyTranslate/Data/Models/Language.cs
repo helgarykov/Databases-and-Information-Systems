@@ -1,7 +1,0 @@
-namespace Data.Models;
-
-public class Language
-{
-    public int Id { get; set; }
-    public string NameOfLang { get; set; }
-}

@@ -1,0 +1,66 @@
+a)
+
+Our:
+σ 
+(((PC.speed ≤ PC1.speed) ∧ (PC.hd ≤ PC1.hd)) ∨
+((PC.hd ≤ PC1.hd) ∧ (PC.ram ≤ PC1.ram)) ∨
+((PC.speed ≤ PC1.speed) ∧ (PC.ram ≤ PC1.ram)))
+(ρ PC1(PC) ⨝ PC.price > PC1.price (PC))
+
+
+σ (PC.speed > PC2.speed ∧ PC.ram > PC2.ram ∨ PC.speed > PC2.speed ∧ PC.hd > PC2.hd ∨ PC.ram > PC2.ram ∧ PC.hd > PC2.hd) ∧ PC.price < PC2.price ((ρ PC2 (PC)) ⨯ PC)
+
+
+
+b)
+
+σ lspeed < PC.speed ((γ max(speed) -> lspeed(Laptop))⨯PC)
+
+
+
+c)
+
+Laptops = π Product.maker,Product.model,Laptop.price (Product⨝ Product.model = Laptop.model Laptop)
+PCs = π Product.maker,Product.model,PC.price (Product⨝ Product.model = PC.model PC)
+Printers = π Product.maker,Product.model,Printer.price (Product⨝ Product.model = Printer.model Printer)
+ρ Device (PCs ∪ Laptops ∪ Printers)
+
+
+
+d)
+
+mmp = ρ mmp (π maker,model Product ⨝ (π model, price PC ∪ π model, price Laptop ∪ π model, price Printer))
+mmp2 = (γ maker; max(price) -> price (mmp))
+mmp2 ⨝ (π price, model mmp)
+
+
+
+e)
+
+σ Laptop.speed = PC.speed (π Laptop.model, Laptop.speed, PC.model, PC.speed (Laptop ⨯ PC))
+
+
+
+f)
+
+σ avgPrice < price ((γ avg(price) -> avgPrice(Laptop))⨯Laptop)
+
+
+
+g)
+
+τ hd asc (γ hd; count(hd) -> number, avg(price) -> avgPrice (PC))
+
+
+
+h)
+
+(π price,model Printer) ⨝ minPrice = price ∨ maxPrice = price (γ type; min(price) -> minPrice, max(price) -> maxPrice (Printer))
+
+
+
+i)
+
+ρ computer (π model,hd,speed,BMI <- hd/(speed*speed) (PC)) ∪ (π model,hd,speed,BMI <- hd/(speed*speed) (Laptop))
+
+
